@@ -1,0 +1,322 @@
+
+body {
+	margin: 0;
+}
+
+/* 去a标签的掉下划线 */
+a {text-decoration: none; color: #000000; }
+
+/*获取焦点的元素 去掉外边框*/
+*:focus { outline: none; }
+
+/**********************导航栏的样式******************************/
+
+.nav {
+	background-color: #FFFFFF; 
+	height: 81px;
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+	border-bottom: 1px solid #d8d8d8;
+}
+
+.nav-inner {
+	/*background-color: orange;*/
+	height: 80px;
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+}
+
+.nav-inner .logo {
+	background: url(../img/logo.png) no-repeat center;
+	width: 133px;
+	height: 80px;
+	background-size: contain;
+}
+
+.tabs {
+	display: flex;	
+	flex-grow: 0.5;
+	justify-content: center;
+}
+
+.tabs a {
+	display: inline-block;
+	text-align: center;
+	width: 80px;
+	height: 80px;
+	color :black;
+	line-height: 80px;
+	font-size: 18px;
+}
+
+.tabs a:hover {
+	color: red;
+}
+
+.tabs a.active {
+	background-color: red;
+	color: white;
+}
+
+.nav-right {
+	/*background-color: skyblue;*/
+	flex-grow: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.profile {
+	width: 70px;
+	height: 100%;
+	/*background-color: beige;*/
+	
+	/*position: absolute;*/
+	
+	/*flex布局的排序，值越小越优先显示在前面*/
+	order: 1;  
+}
+.profile img{
+	margin-top: 15%;
+	width: 80%;
+	height: 70%;
+}
+
+.search {
+	order: 0;
+	width: 300px;
+}
+
+.search input {
+	height: 35px;
+	width: 250px;
+	background-color: #faf8fa;
+	border: 1px solid #ccc;
+	border-radius: 30px;
+	padding: 0 40px 0 20px;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+
+.search button {
+	width: 33px;
+	height: 33px;
+	background-color: red;
+	border-radius: 20px;
+	border: none;
+	position: relative;
+	top : 8px;
+	right: 35px;
+	background-image: url(../img/search_btn.png);
+	background-position: center;
+}
+
+/****************************************************/
+
+/***********************电影：正在热映-即将上映-经典影片 导航栏**************/
+
+.movie-content {
+	position: relative; 
+	top:81px;
+}
+
+.movie-nav {
+	background-color: #47464a;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.movie-nav a {
+	width: 145px;
+	text-align: center;
+	line-height: 60px;
+	display: inline-block;
+	color: #999;
+	position: relative;
+}
+
+.movie-nav a:hover {
+	color: white;
+}
+
+.movie-nav a.active {
+	color : red;
+}
+
+.movie-nav a.active:before {
+	content: "";
+	border: 10px solid transparent;
+	border-bottom: 10px solid white;
+	position: absolute;
+	top : 40px;
+	/*left: 60px;*/
+	left: 50%;
+	margin-left: -10px;
+}
+
+
+.movie-classes-list {
+	width: 90%;
+	border: 1px solid #e5e5e5;
+	margin: 40px auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.movie-row {
+	display: flex;
+	padding: 10px;
+}
+
+.movie-row a {
+	line-height: 25px;
+	display: inline-block;
+	padding: 0 10px;
+} 
+
+.movie-row a:hover {
+	color: red;
+}
+
+.movie-row a.active {
+	background-color: red;
+	color: white;
+	border-radius: 15px;
+}
+
+.tags-title {
+	display: inline-block;
+	width: 75px;
+	color: #999999;
+	padding-top: 5px;
+}
+
+.tags-border {
+	border-top: 1px dotted #E5E5E5;
+}
+
+
+/***********************电影列表********************/
+
+
+.movie-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	/*justify-content: space-between;*/
+	/*justify-content: center;*/
+	margin: 0 auto;
+	width: 94%;
+}
+
+.movie-item {
+	/*background-color: orange;*/
+	margin: 15px;
+}
+
+.img-item {
+	width: 160px;
+	height: 220px;
+	background-color: greenyellow;	
+}
+
+.movie-item a {
+	text-decoration: none;
+	color : black;
+	display : inline-block;
+	text-align: center;
+}
+.coming{
+	width: 160px;
+}
+.movie-item a:hover{
+	text-decoration: none;
+	color: red;
+}
+.tikect{
+	display: block;
+	width: 160px;
+	height: 35px;
+	line-height: 35px;
+	border: 1px solid gainsboro;
+}
+.tikect:hover{
+	background: rgb(255,112,112);
+	color: white!important;
+	cursor: pointer;
+}
+
+.movie-rating {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+.big {
+	font-size: 18px;
+	font-weight: bold;
+	font-family: "微软雅黑";
+	color : orange;
+}
+
+.small {
+	font-size: 14px;
+	font-family: "微软雅黑";
+	color : orange;
+}
+
+/*首页样式*/
+.movie-item a:hover{
+	text-underline: none!important;
+}
+
+/*登录样式*/
+.login{
+	width: 410px;
+	height: 250px;
+	text-align: center;
+	margin: 15% auto;
+	background: white;
+}
+.loginBg{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(166, 166, 166, 0.6);
+}
+.login button{
+	width: 100px;
+	margin-top: 20px;
+}
+.closeLogin{
+	position: absolute;
+	/*right: 0;*/
+	color: red;
+}
+/*注册*/
+.register{
+	width: 490px;
+	height: 300px;
+	text-align: center;
+	margin: 15% auto;
+	background: white;
+}
+.assess{
+	display:inline-block;
+	width: 55px;
+	height: 30px;
+	font-size:14px;
+	text-align:center;
+	line-height: 30px;
+	border-radius: 15px;
+	border: 1px solid red;
+	color: red;
+	float: right;
+	top: -20px!important;
+}
