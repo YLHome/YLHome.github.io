@@ -1,0 +1,96 @@
+<div class="nav" ng-controller="NavController">
+	
+	<div class="nav-inner">
+		<!-- logo -->
+		<a href="#" class="logo"></a>
+		
+		<!-- 导航 -->
+		<div class="tabs">
+			<a ui-sref=".home" ng-class="{active:selectIndex==0}" ng-click="selectIndex=0">首页</a>
+			<a ui-sref=".movie" ng-class="{active:selectIndex==1}" ng-click="selectIndex=1">电影</a>
+			<a ui-sref=".board" ng-class="{active:selectIndex==2}" ng-click="selectIndex=2">榜单</a>			
+		</div>
+		
+		<!-- 搜索 -->
+		<div class="nav-right">
+			
+			 <!--头像-->
+			<div class="profile" ng-click="Login()">
+				<img src="http://p0.meituan.net/movie/7dd82a16316ab32c8359debdb04396ef2897.png">
+			</div>
+			
+			<!-- 搜索 -->
+			<div class="search">
+				<input type="text" placeholder="找影视剧、影人、影院" ng-model="searchMovie" />
+				<button></button>
+			</div>
+			<!--<div class="input-group">-->
+				<!--<input type="text" class="form-control" ng-model="searchMovie">-->
+				<!--<span class="input-group-btn">-->
+					<!--<button class="btn btn-danger" type="button">搜索</button>-->
+				<!--</span>-->
+			<!--</div>-->
+			
+		</div>	
+	</div>
+	<!--登陆注册框-->
+	<div class="loginBg" ng-show="isLogin">
+		<div class="login">
+			<button type="button" class="close" style="display: block;position: absolute;right: 30.5%;top: 170px" ng-click="myClose()">&times;</button>
+			<form class="form-horizontal" role="form" style="margin-top: 30px">
+				<span style="display:block;padding-top: 16px;padding-bottom: 14px;">账户登录</span>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" style="margin-left: 10px">手机号</label>
+					<div class="col-sm-9">
+						<input class="form-control" id="focusedInput" type="text" placeholder="请输入手机号">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" style="margin-left: 10px">密码</label>
+					<div class="col-sm-9">
+						<input class="form-control" type="password" placeholder="请输入密码">
+					</div>
+				</div>
+
+				<div>
+					<a href="http://www.meituan.com/dianying/249898?#content" ng-click="myLogin()"><button type="button" class="btn btn-success">登 &nbsp;&nbsp;录</button></a>
+				</div>
+				<span style="display: block;margin-top: 20px">还没有账号? <a style="color: red" ng-click="Register()">免费注册</a></span>
+			</form>
+		</div>
+	</div>
+	<div class="loginBg" ng-show="isregister">
+		<div class="register">
+			<button type="button" class="close" style="display: block;position: absolute;right: 31%;top: 190px" ng-click="myClose()">&times;</button>
+			<form class="form-horizontal" role="form" style="margin-top: 30px">
+				<span style="display:block;padding-top: 16px;padding-bottom: 14px;">账户注册</span>
+				<div class="form-group" style="padding-top: 30px">
+					<label class="col-sm-2 control-label" style="margin-left: 10px">手机号</label>
+					<div class="col-sm-9">
+						<input class="form-control" type="text" placeholder="请输入手机号">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" style="margin-left: 10px">创建密码</label>
+					<div class="col-sm-9">
+						<input class="form-control" type="password" placeholder="请输入密码">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" style="margin-left: 10px">确认密码</label>
+					<div class="col-sm-9">
+						<input class="form-control" type="password" placeholder="请输入密码">
+					</div>
+				</div>
+				<div>
+					<button type="button" class="btn btn-success" ng-click="reLogin()">同意以下协议并注册</button>
+				</div>
+				<span style="display: block;margin-top: 15px;color: red;font-size: 12px">《美团网用户协议》</span>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- 子页面的内容，显示在ui-view标签中 -->
+<!--<ui-view></ui-view>-->
+<div class="movie-content" ui-view></div>	
